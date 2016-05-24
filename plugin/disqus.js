@@ -1,6 +1,6 @@
 /**
- * Created by xinyu zhang on 5/24/16.
- * <zhangshea@gmail.com>
+ * Created by shuding on 5/22/16.
+ * <ds303077135@gmail.com>
  */
 
 module.exports = {
@@ -9,19 +9,19 @@ module.exports = {
     this.db = _db;
   },
   render: (template, options) => {
-    let cname = options.blog.plugin ? options.blog.plugin.cname || '' : '';
+    let disqus = options.blog.plugin ? options.blog.plugin.disqus || '' : '';
     let context = {};
 
     if (template == 'settings') {
       // settings page
       context.settings =
         `<div class="input-group">
-          <h5>Custom CNAME</h5>
-          <p><input type="text" name="plugin.cname" placeholder="http://custom.custom" value="${cname}"> </p>
+          <h5>Disqus</h5>
+          <p><input type="text" name="plugin.disqus" placeholder="xxxx" value="${disqus}" style="width: inherit"> .disqus.com</p>
         </div>`;
     }
 
-    if (cname)
+    if (disqus)
       context.postBottom = context.pageBottom =
         `<div id="disqus_thread" style="margin-top: 50px"></div>
         <script>
