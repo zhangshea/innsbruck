@@ -6,9 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "if [ $(node --version | grep -c 'v[45]') -eq 1 ]; then node --harmony_sloppy_let --harmony_destructuring --harmony index.js; else node index.js; fi",
-    "test": "if [ $(node --version | grep -c 'v[45]') -eq 1 ]; then mocha -- --harmony_sloppy_let --harmony_destructuring; else mocha; fi",
-    "prebuild-desktop": "sh install.sh",
-    "electron": "electron ./desktop"
+    "test": "if [ $(node --version | grep -c 'v[45]') -eq 1 ]; then mocha -- --harmony_sloppy_let --harmony_destructuring; else mocha; fi"
   },
   "repository": {
     "type": "git",
@@ -35,7 +33,6 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "electron-prebuilt": "^1.1.1",
     "mocha": "*",
     "supertest": "^1.2.0"
   }
